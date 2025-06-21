@@ -24,7 +24,7 @@ body{font-family: Arial, Helvetica, sans-serif;}
     }
 }
 .chatBox {
-    border: 5px solid dark black;
+    border: 5px solid black;
     border-radius: 5px;
     width: 640px;
     height: 400px;

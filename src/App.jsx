@@ -24,7 +24,7 @@ export default function App() {
     
     
 
-    const channels = supabase.channel('chat-channel')
+    const channel = supabase.channel('chat-channel')
     .on(
       'postgres_changes',
       { event: 'INSERT', schema: 'public', table: 'chats' },
@@ -35,6 +35,10 @@ export default function App() {
       }
     )
     .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, []);
 
   async function handleSubmit(e) {
